@@ -1,0 +1,66 @@
+2023-05-14 18:24:06 [scrapy.utils.log] INFO: Scrapy 2.9.0 started (bot: scrapybot)
+2023-05-14 18:24:06 [scrapy.utils.log] INFO: Versions: lxml 4.9.2.0, libxml2 2.9.14, cssselect 1.2.0, parsel 1.8.1, w3lib 2.1.1, Twisted 22.10.0, Python 3.10.2 (v3.10.2:a58ebcc701, Jan 13 2022, 14:50:16) [Clang 13.0.0 (clang-1300.0.29.30)], pyOpenSSL 23.1.1 (OpenSSL 3.1.0 14 Mar 2023), cryptography 40.0.2, Platform macOS-11.5.2-x86_64-i386-64bit
+2023-05-14 18:24:06 [scrapy.crawler] INFO: Overridden settings:
+{'LOG_FILE': 'scrapy.log',
+ 'LOG_LEVEL': 'INFO',
+ 'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
+2023-05-14 18:24:06 [py.warnings] WARNING: /Users/macbook/Desktop/projects/djangoprojects/my_env/lib/python3.10/site-packages/scrapy/utils/request.py:232: ScrapyDeprecationWarning: '2.6' is a deprecated value for the 'REQUEST_FINGERPRINTER_IMPLEMENTATION' setting.
+
+It is also the default value. In other words, it is normal to get this warning if you have not defined a value for the 'REQUEST_FINGERPRINTER_IMPLEMENTATION' setting. This is so for backward compatibility reasons, but it will change in a future version of Scrapy.
+
+See the documentation of the 'REQUEST_FINGERPRINTER_IMPLEMENTATION' setting for information on how to handle this deprecation.
+  return cls(crawler)
+
+2023-05-14 18:24:07 [scrapy.extensions.telnet] INFO: Telnet Password: c469b650489c5426
+2023-05-14 18:24:07 [py.warnings] WARNING: /Users/macbook/Desktop/projects/djangoprojects/my_env/lib/python3.10/site-packages/scrapy/extensions/feedexport.py:326: ScrapyDeprecationWarning: The `FEED_URI` and `FEED_FORMAT` settings have been deprecated in favor of the `FEEDS` setting. Please see the `FEEDS` setting docs for more details
+  exporter = cls(crawler)
+
+2023-05-14 18:24:07 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.feedexport.FeedExporter',
+ 'scrapy.extensions.logstats.LogStats']
+2023-05-14 18:24:07 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2023-05-14 18:24:07 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2023-05-14 18:24:07 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2023-05-14 18:24:07 [scrapy.core.engine] INFO: Spider opened
+2023-05-14 18:24:07 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2023-05-14 18:24:07 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6024
+2023-05-14 18:24:07 [django.request] ERROR: Internal Server Error: /scrape/ordinateurs-accessoires-informatique/
+Traceback (most recent call last):
+  File "/Users/macbook/Desktop/projects/djangoprojects/my_env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/Users/macbook/Desktop/projects/djangoprojects/my_env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/macbook/Desktop/projects/djangoprojects/ecom/ecom/views2.py", line 20, in scrape
+    process.start()
+  File "/Users/macbook/Desktop/projects/djangoprojects/my_env/lib/python3.10/site-packages/scrapy/crawler.py", line 383, in start
+    install_shutdown_handlers(self._signal_shutdown)
+  File "/Users/macbook/Desktop/projects/djangoprojects/my_env/lib/python3.10/site-packages/scrapy/utils/ossignal.py", line 19, in install_shutdown_handlers
+    reactor._handleSignals()
+  File "/Users/macbook/Desktop/projects/djangoprojects/my_env/lib/python3.10/site-packages/twisted/internet/posixbase.py", line 142, in _handleSignals
+    _SignalReactorMixin._handleSignals(self)
+  File "/Users/macbook/Desktop/projects/djangoprojects/my_env/lib/python3.10/site-packages/twisted/internet/base.py", line 1281, in _handleSignals
+    signal.signal(signal.SIGINT, reactorBaseSelf.sigInt)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/signal.py", line 56, in signal
+    handler = _signal.signal(_enum_to_int(signalnum), _enum_to_int(handler))
+ValueError: signal only works in main thread of the main interpreter
+2023-05-14 18:24:48 [django.utils.autoreload] INFO: /Users/macbook/Desktop/projects/djangoprojects/ecom/ecom/views2.py changed, reloading.
